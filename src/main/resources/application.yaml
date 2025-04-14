@@ -1,0 +1,3 @@
+spring.application.name: bikini-validation
+
+server.port: 8081
