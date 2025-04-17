@@ -1,3 +1,9 @@
 spring.application.name: bikini-validation
 
 server.port: 8081
+
+kafka:
+  enabled: true
+  topic: bikini-checks
+  server: localhost:29092
+  clientId: client_id
