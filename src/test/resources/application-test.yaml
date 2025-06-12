@@ -1,0 +1,8 @@
+kafka:
+  enabled: false
+
+logging.level.org:
+  springframework:
+    data.mongodb.core.MongoTemplate: DEBUG
+    boot.autoconfigure.mongo.embedded:
+  mongodb:

@@ -1,0 +1,29 @@
+#Узнаем id container
+docker ps
+
+#get the container IP address to access the database.
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' 1bd9e76f808a
+
+#Заходим через клиент-монго-контейнер во вкладку exec и подключаемся к бд
+mongo --host 172.22.0.2 --port 27017
+
+use admin
+
+#authenticate
+db.auth('admin','admin')
+
+#can see the newly created database
+show dbs
+
+#switched to db checks
+use checks
+
+#создасться коллекция articles
+db.articles.insert({"name":"Author1"})
+db.articles.insert({"name":"Author2"})
+db.articles.insert({"name":"Author3"})
+
+show collections
+
+#find all from collection 'articles'
+db.articles.find()

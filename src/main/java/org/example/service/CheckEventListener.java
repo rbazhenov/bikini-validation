@@ -12,17 +12,17 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
-@Setter(onMethod = @__(@Autowired))
+@Setter(onMethod = @__({@Autowired(required = false)}))
 public class CheckEventListener implements ApplicationListener<CheckEvent> {
 
     private KafkaTemplate<String, ResidentCheckAnswer> kafkaTemplate;
     private KafkaProperties properties;
 
-    @Autowired
-    public void setCreateTemplate(
-            @Qualifier("checkKafkaTemplate") KafkaTemplate<String, ResidentCheckAnswer> kafkaTemplate) {
-        this.kafkaTemplate = kafkaTemplate;
-    }
+//    @Autowired
+//    public void setCreateTemplate(
+//            @Qualifier("checkKafkaTemplate") KafkaTemplate<String, ResidentCheckAnswer> kafkaTemplate) {
+//        this.kafkaTemplate = kafkaTemplate;
+//    }
 
     @Override
     public void onApplicationEvent(CheckEvent event) {

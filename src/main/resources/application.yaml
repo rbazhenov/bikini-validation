@@ -7,3 +7,11 @@ kafka:
   topic: bikini-checks
   server: localhost:29092
   clientId: client_id
+
+spring.data.mongodb:
+  host: localhost
+  port: 27017
+  database: test
+  username: admin
+  password: admin
+  authentication-database: admin
